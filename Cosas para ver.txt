@@ -1,0 +1,49 @@
+<header>
+<nav>
+<ul>
+<li>
+<span>
+<section>
+<article>
+<aside>
+<footer>
+Elementos contenedores????
+<table>
+<thead>
+<tbody>
+<a>
+<filedset>
+<legend>
+
+Que pasa cuando no la cuenta no da 12?
+
+<ng-content>
+
+Objetos JSON
+
+alert
+confirm
+
+
+array.splice
+
+ngIf
+
+
+Clases de bootstrasp
+
+form-horizontal
+form-group
+control-label
+form-control
+btn btn-success
+col-sm-offset-2
+
+ajax
+debug de angular
+
+map
+filter
+
+as Tipo (para declarar variables)
+

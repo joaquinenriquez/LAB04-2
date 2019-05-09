@@ -1,0 +1,15 @@
+appModule 
+
+
+Nos permite pasar parametros por get al componente
+
+En el path especificamos el nombre del parametro. Por ejemplo:
+{path: "Login/id", LoginComponents}
+
+
+<button routerlink= "/Ruta""
+
+___________________________
+
+@Input
+Nos permite pasarle un parametro a nuestro componete desde HTML

@@ -1,0 +1,79 @@
+Tutorial Heroes
+Sala de juegos andando
+
+GRABADOR DE PANTALLAS
+AGUA
+Servidorr (HOSTING)
+
+
+ABM->Primer parcial
+
+
+input (parametros) y output (eventos)
+
+
+instalar node
+instalar angular
+
+
+primeng
+material
+bootstrap
+
+
+node_modules
+
+
+
+src
+	app: nuestra app
+		app.component.css
+	assets: ?
+	environments:?
+	
+
+app.Module.ts:
+	Va a estar la interaccion entre todos los componentes, directivas, providers, etc
+
+
+
+
+Crear componente:
+ng g c Carpeta\nombreComponente
+
+
+A mano:
+En el archivo app.Module.ts importamos:
+import { LoginComponent } from './components/login/login.component';
+
+
+selector es el tag que vamos a utilizar para agregarlo.
+
+
+Crear clase:
+ng g cl clases\usuario
+
+______________________________________________________________
+Cosas locas que nos pueden pedir en examen:
+pipe
+jsonwebtoken
+
+______________________________________________________________
+
+
+Binding
+
+1. Incluir en app.module.ts
+import {FormsModule} from '@angular/forms';
+
+2. Agregarlo en el imports
+  imports: [
+    BrowserModule,
+    FormsModule
+]
+
+
+3.
+
+
+

@@ -1,0 +1,4 @@
+<div class="container">
+    <app-alta (Agregado)="cargarUno($event)" (Modificado)="onModificado($event)" #formularioAlta></app-alta>
+    <app-grilla [listadoEntidades]="listadoEntidades" (onModificar)="onModificar($event)" (onEliminar)="onEliminar($event)"></app-grilla>
+</div>

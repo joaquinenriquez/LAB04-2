@@ -1,0 +1,19 @@
+<h1>ngIf</h1>
+
+<p>Muestra o oculta un elemento HTML en función de una condición</p>
+
+<h3>Valor de mostrar = {{mostrar.toString()}}</h3>
+
+<button (click)="mostrar = true">Mostrar</button>
+<button (click)="mostrar = false">Ocultar</button>
+<p *ngIf="mostrar">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, ratione aut similique pariatur ab delectus architecto numquam tempore odit voluptatem id nemo iusto adipisci, neque, veritatis nobis nihil natus sunt.</p>
+<br>
+
+<h2>Ejemplo con ngIf;else</h2>
+<p>Muestra o oculta un elemento HTML en función de una condición y si no se cumple dicha condición muestra otro elemento</p>
+<h3>Valor de mostrar2 {{mostrar2.toString()}}</h3>
+<button (click)="mostrar2 = true">Mostrar 2</button>
+<button (click)="mostrar2 = false">Ocultar 2</button>
+<p *ngIf="mostrar2; else textoDos">Si la condición es verdadera, muestro esto</p>
+<ng-template #textoDos><p>Si la condición es falsa, muesto esto</p></ng-template>
+

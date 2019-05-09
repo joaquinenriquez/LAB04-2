@@ -1,0 +1,17 @@
+<h2>
+  Listado de clientes
+</h2>
+
+<!--Si el array de clientes (atributo de nuestra clase) no tienen ningun elemento
+mostramos el siguiente mensaje-->
+<div *ngIf = "! clientes.length"> No hay clientes por el momento </div>
+
+<div>
+  <!--Recorremos el array de clientes y generamos una etiqueta article por cada uno-->
+  <article *ngFor="let unCliente of clientes">
+    <span>{{unCliente.nombre}}</span>
+    <span>{{unCliente.codigoPostal}}</span>
+    <span>{{unCliente.direccion}}</span>
+    <span>{{unCliente.grupo}}</span>
+  </article>
+</div>

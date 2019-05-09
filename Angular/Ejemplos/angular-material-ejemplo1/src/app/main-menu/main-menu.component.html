@@ -1,0 +1,32 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>CATEGORIAS</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">MULTIJUGADOR</a>
+      <a mat-list-item href="#">ACCION</a>
+      <a mat-list-item href="#">AVENTURAS</a>
+      <a mat-list-item href="#">CARRERAS</a>
+      <a mat-list-item href="#">CLÁSICOS</a>
+      <a mat-list-item href="#">DEPORTES</a>
+      <a mat-list-item href="#">ESTRATEGIA</a>
+      <a mat-list-item href="#">DEPORTES</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>angular-material-ejemplo1</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

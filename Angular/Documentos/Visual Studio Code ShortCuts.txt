@@ -1,0 +1,14 @@
+Regiones (primero seleccionar lo que se quiere aplicar region [requiere extension:#region folding for VS Code]
+Ctrl + M Ctrl + R
+
+Cambiar al HTML del componente actual [require angular2-switcher]
+Alt + o
+(si volvemos a presionar volvemos al archivo anterior)
+
+Cambiar al CSS del componente actual [require angular2-switcher]
+Alt + i
+(si volvemos a presionar volvemos al archivo anterior)
+
+Cambiar al CSS del componente TS [require angular2-switcher]
+Alt + u
+(si volvemos a presionar volvemos al archivo anterior)

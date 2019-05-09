@@ -1,0 +1,32 @@
+<div class="container">
+    <table class="table table-striped thead-light table-hover">
+      <caption>Entidad Detalles</caption>
+      <thead>
+          <tr>
+              <!-- <th>Id</th> -->
+              <th>Campo1</th>
+              <th>Campo2</th>
+              <th>Campo3</th>
+              <th>Foto</th>
+              <!-- <th>Phone</th>
+              <th>Website</th> -->
+              <th>Modificar</th>
+              <th>Eliminar</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor = "let entidad of listadoEntidades; index as i" [hidden]="!entidad.estado">
+              <!-- <td> {{entidad.id}} </td> -->
+              <td> {{entidad.campo1}} </td>
+              <td> {{entidad.campo2}} </td>
+              <td> {{entidad.campo3}} </td>
+              <td><img src="../../../assets/img/{{entidad.id}}.jpg" alt="" border=3 height=100 width=100></td>
+
+              <!-- <td> {{user.telefono}} </td>
+              <td> {{user.paginaWeb}} </td> -->
+              <td><button type="button" class="btn btn-warning" (click)="modificar(entidad, i)">Modificar</button></td>
+              <td><button type="button" class="btn btn-danger" (click)="eliminar(i)">Eliminar</button></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
