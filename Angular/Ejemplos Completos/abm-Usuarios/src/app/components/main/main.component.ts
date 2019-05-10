@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IEntidad } from 'src/app/models/ientidad.model';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { IPelicula } from 'src/app/models/IPelicula.model';
+import { UsuarioService } from 'src/app/services/pelicula.service';
 import { AltaComponent } from '../alta/alta.component';
 
 @Component({
@@ -10,10 +10,15 @@ import { AltaComponent } from '../alta/alta.component';
 })
 export class MainComponent implements OnInit {
 
-  listadoEntidades: IEntidad[];
+  listadoEntidades: IPelicula[];
   @ViewChild('formularioAlta') formularioAlta: AltaComponent;
 
-  constructor(private miHttp: UsuarioService) { }
+
+  unaPeliculaEncontrada = {} as IPelicula;
+
+  constructor(private miHttp: UsuarioService) {
+    this.unaPeliculaEncontrada.nombre = 'Sin resultado';
+  }
 
   ngOnInit() {
     this.traerDatos();
@@ -30,7 +35,7 @@ export class MainComponent implements OnInit {
       });
   }
 
-  public cargarUno(unaEntidad: IEntidad) {
+  public cargarUno(unaEntidad: IPelicula) {
 
     this.miHttp.CargarUno(unaEntidad)
       .then(
@@ -47,15 +52,42 @@ export class MainComponent implements OnInit {
     console.log(unaEntidad);
   }
 
-  public onModificar(unaEntidad: IEntidad) {
+  public onModificar(unaEntidad: IPelicula) {
     this.formularioAlta.onModificar(unaEntidad);
   }
 
-  public onEliminar(unaEntidad: IEntidad) {
+  public onEliminar(id: number) {
     console.log('eliminar');
+    let indice: number;
+
+// tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < this.listadoEntidades.length; i++){
+      if (this.listadoEntidades[i].id === id) {
+        this.listadoEntidades[i].estado = false;
+        indice = i;
+        break;
+      }
+    }
+
+    this.miHttp.Modificar(this.listadoEntidades[indice])
+      .then(
+        response => {
+                console.log(response);
+            })
+      .catch(
+        error => {
+          console.error(error);
+        }
+      );
   }
 
-  public onModificado(unaEntidad: IEntidad) {
+  peliculaEncontrada(pelicula: IPelicula){
+
+    this.unaPeliculaEncontrada = pelicula;
+    console.log("Encontrada");
+  }
+
+  public onModificado(unaEntidad: IPelicula) {
     let indice: number;
     console.log("Modificar");
     console.log(unaEntidad);

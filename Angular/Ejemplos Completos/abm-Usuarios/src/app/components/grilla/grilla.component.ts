@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { UsuarioService } from 'src/app/services/usuario.service';
-import { IEntidad } from 'src/app/models/ientidad.model';
+import { UsuarioService } from 'src/app/services/pelicula.service';
+import { IPelicula } from 'src/app/models/IPelicula.model';
 
 
 @Component({
@@ -12,9 +12,9 @@ export class GrillaComponent implements OnInit {
 
   /* #region  Atributos */
 
-  @Input() listadoEntidades: IEntidad[];
-  @Output() onModificar = new EventEmitter<IEntidad>();
-  @Output() onEliminar = new EventEmitter<IEntidad>();
+  @Input() listadoEntidades: IPelicula[];
+  @Output() onModificar = new EventEmitter<IPelicula>();
+  @Output() onEliminar = new EventEmitter<IPelicula>();
 
   /* #endregion */
 
@@ -23,15 +23,15 @@ export class GrillaComponent implements OnInit {
   ngOnInit() {
   }
 
-  eliminar(unaEntidad: IEntidad){
-    let confirmar = confirm("Estas seguro?");
-    if (confirmar == true) {
-      this.onEliminar.emit(unaEntidad)
+  eliminar(unaEntidad: IPelicula){
+    let confirmar = confirm('Estas seguro?');
+    if (confirmar === true) {
+      this.onEliminar.emit(unaEntidad);
     }
    }
 
-   modificar(unaEntidad: IEntidad, indice: number) {
-     console.log("En la grilla");
+   modificar(unaEntidad: IPelicula, indice: number) {
+     console.log('En la grilla');
      console.log(unaEntidad);
      this.onModificar.emit(unaEntidad);
    }

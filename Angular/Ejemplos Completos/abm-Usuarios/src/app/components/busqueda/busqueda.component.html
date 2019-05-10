@@ -1,0 +1,32 @@
+<div class="col-sm-6 col-sm-offset-3" style="background-color: #1e90ffa3; border-radius:4px; padding-bottom:15px;">
+    <span class="anchor" id="formLogin"></span>
+
+    <!-- form card login with validation feedback -->
+    <div class="card card-outline-primary">
+
+      <!-- #region Titulo -->
+      <div class="card-header ">
+        <h3 class="mb-0 card-te">Busqueda</h3>
+      </div>
+      <!-- #endregion -->
+
+      <div class="card-body">
+
+          <!-- #region Campos -->
+
+          <div class="form-group">
+            <label>Titulo</label>
+            <input type="text" [(ngModel)]="titulo" class="form-control" name="txtnombre" id="pwd1">
+          </div>
+
+          <!-- #endregion -->
+
+          <button class="btn btn-success btn-lg" (click)="buscar()">Buscar</button>
+
+
+
+      </div>
+      <!--/card-body-->
+    </div>
+    <!-- /form card login -->
+  </div>

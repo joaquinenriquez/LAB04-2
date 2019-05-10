@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { UsuarioService } from 'src/app/services/usuario.service';
-import { IEntidad } from 'src/app/models/ientidad.model';
+import { UsuarioService } from 'src/app/services/pelicula.service';
+import { IPelicula } from 'src/app/models/IPelicula.model';
 
 
 @Component({
@@ -12,16 +12,16 @@ import { IEntidad } from 'src/app/models/ientidad.model';
 export class AltaComponent implements OnInit {
 
   modificar: boolean = false;
-  unaEntidad: IEntidad;
+  unaEntidad: IPelicula;
 
-  @Output() Agregado = new EventEmitter<IEntidad>();
-  @Output() Modificado = new EventEmitter<IEntidad>();
+  @Output() Agregado = new EventEmitter<IPelicula>();
+  @Output() Modificado = new EventEmitter<IPelicula>();
 
   userForm = new FormGroup({
     id: new FormControl(''),
-    campo1: new FormControl(''),
-    campo2: new FormControl(''),
-    campo3: new FormControl(''),
+    nombre: new FormControl(''),
+    tipo: new FormControl(''),
+    fechaEstreno: new FormControl(''),
   });
 
   onSubmit() {
@@ -39,13 +39,13 @@ export class AltaComponent implements OnInit {
 
   }
 
-  onModificar(unaEntidad: IEntidad){
+  onModificar(unaEntidad: IPelicula){
     this.modificar = true;
     this.userForm.setValue({
       id: unaEntidad.id,
-      campo1: unaEntidad.campo1,
-      campo2: unaEntidad.campo2,
-      campo3: unaEntidad.campo3
+      nombre: unaEntidad.nombre,
+      tipo: unaEntidad.tipo,
+      fechaEstreno: unaEntidad.fechaEstreno
     });
   }
 

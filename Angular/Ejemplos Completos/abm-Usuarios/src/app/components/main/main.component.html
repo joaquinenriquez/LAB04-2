@@ -1,4 +1,9 @@
 <div class="container">
-    <app-alta (Agregado)="cargarUno($event)" (Modificado)="onModificado($event)" #formularioAlta></app-alta>
-    <app-grilla [listadoEntidades]="listadoEntidades" (onModificar)="onModificar($event)" (onEliminar)="onEliminar($event)"></app-grilla>
+
+  <app-menu></app-menu>
+  <app-busqueda [listadoPeliculas]="listadoEntidades" (onPeliculaEncontrada)="peliculaEncontrada($event)"></app-busqueda>
+
+  <app-resultado-busqueda [peliculaEncontrada]="unaPeliculaEncontrada"></app-resultado-busqueda>
+
+  <app-grilla [listadoEntidades]="listadoEntidades" (onModificar)="onModificar($event)" (onEliminar)="onEliminar($event)"></app-grilla>
 </div>
